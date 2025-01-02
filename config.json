@@ -1,0 +1,13 @@
+{
+    "http_port" : 8870,
+    "p2p_port"  : 9870,
+    "p2p_peer_address": [""],
+    "pubkey_prefix": "FO",
+    "producer_name": "eosio",
+    "config_dir"   : "./data",
+    "data_dir"     : "./data",
+    "snapshot_dir" : "",
+    "public_key"   : "FO6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV",
+    "private_key"  : "5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3",
+    "genesis_json" : "genesis.json"
+}
