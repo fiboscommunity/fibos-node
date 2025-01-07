@@ -105,6 +105,12 @@ fibos.load("chain", chain_config);
 // Load the chain API module plugin
 fibos.load("chain_api");
 
+// Load the wallet module plugin
+fibos.load("wallet")
+
+// Load the wallet API module plugin
+fibos.load("wallet_api");
+
 // Load the cross-chain module plugin
 fibos.load("cross");
 
@@ -124,4 +130,10 @@ curl -s https://fibos.io/download/installer.sh | sh
 
 ```bash
 fibos ./index.js
+```
+
+3. Enter the current `node` directory: Run the `wallet.js` file to start a wallet node:
+
+```bash
+fibos ./wallet.js
 ```
