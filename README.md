@@ -88,11 +88,17 @@ let producer_config = {
 	'snapshots-dir': 'snapshots'
 }
 
+let cross_config = {}
+
 // Whether it is a block-producing node. If yes, configure the node's producer_name, public_key, and private_key. Otherwise, for sync nodes, these parameters are not required.
 if (producername && public_key && private_key) {
+	// producer plugin config
 	producer_config['producer-name']           = producername;
     producer_config['enable-stale-production'] = true;
 	producer_config['signature-provider']      = `${public_key}=KEY:${private_key}`;
+	// cross plugin config
+	cross_config['signature-producer'] = producername;
+	cross_config['signature-private-key'] = private_key;
 }
 
 if(producer_config){
@@ -112,7 +118,7 @@ fibos.load("wallet")
 fibos.load("wallet_api");
 
 // Load the cross-chain module plugin
-fibos.load("cross");
+fibos.load("cross", cross_config);
 
 // Start the node
 fibos.start();
