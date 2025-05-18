@@ -38,6 +38,7 @@ fibos.load("http", {
 
 fibos.load("net", {
 	"max-clients": 100,
+	"p2p-max-nodes-per-host": 15,
 	"p2p-peer-address": config.p2p_peer_address,
 	"p2p-listen-endpoint": `0.0.0.0:${p2pPort}`,
 	"agent-name": "FIBOS NODE"
@@ -53,7 +54,7 @@ let cross_config = {}
 if (producername && public_key && private_key) {
 	// producer plugin config
 	producer_config['producer-name']           = producername;
-    producer_config['enable-stale-production'] = true;
+    producer_config['enable-stale-production'] = false;
 	producer_config['signature-provider']      = `${public_key}=KEY:${private_key}`;
 	// cross plugin config
 	cross_config['signature-producer'] = producername;
